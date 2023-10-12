@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+    {% endblock %}
+{% block body %}
+<div class="center">
+    <h3>Add a new movie</h3>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="inputbox">
+                <input type="text" name="name" placeholder="enter movie name"><br>
+            </div>
+            <div class="inputbox">
+                <input type="number" name="year" placeholder="enter year"><br>
+            </div>
+            <div class="inputbox">
+                <input type="text" name="desc" placeholder="enter description"><br>
+            </div>
+            <div class="inputbox">
+                <input type="file" name="img"><br>
+            </div>
+            <div class="inputbox">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+{% endblock %}
